@@ -1,0 +1,3 @@
+@mixin equalHorizontalSpacing($numberOfElements) {
+  width: ((100% / $numberOfElements) - 1%);
+}
