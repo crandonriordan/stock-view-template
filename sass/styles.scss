@@ -18,10 +18,12 @@ li {
 }
 
 #container {
+  @include clearFix(); //fixed my resizing issue -> not sure why?
+  position: relative;
   background: $white;
-  margin: 10% auto;
+  margin: 0 auto;
+  top: 25%;
   width: 50%;
-  padding: 10px 20px;
   box-shadow: 1px 10px 20px rgba(0,0,0,0.19);
 }
 
@@ -38,6 +40,7 @@ header {
 
 article {
   li {
+    font-size: $dataFontSize;
     overflow: hidden;
     text-overflow: ellipsis;
     padding-left: 20px;
@@ -57,10 +60,43 @@ article {
   font-size: 24px;
 }
 
+.stock_info {
+  margin: 2% 0;
+  text-align: center;
+  p {
+    padding-left: 20px;
+    margin-bottom: 5px;
+    display: inline-block;
+    @include equalHorizontalSpacing(2);
+  }
+}
+
 .stock--positive {
   color: lighten(green, 5);
 }
 
 .stock--negative {
   color: lighten(red, 5);
+}
+
+// ANIMATION
+
+
+// animate our drop down drop down info
+// @keyframes example {
+//     from {top: -20px}
+//     to {top: 0}
+// }
+
+// .stock_info {
+//   animation-name: example;
+//   animation-duration: 1s;
+// }
+
+.hidden {
+  display: none;
+}
+
+.displayed {
+  display: block;
 }

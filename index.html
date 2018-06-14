@@ -18,7 +18,7 @@
          <li class="stock__heading">Stock</li>
          <li class="stock__heading">Price</li>
          <li class="stock__heading">Change</li>
-         <li class="stock__heading">% Change</li>
+         <li class="stock__heading">%</li>
        </ul>
      </header>
 
@@ -28,13 +28,29 @@
          <li class="stock__price">$30.00</li>
          <li class="stock__change stock--positive">+0.18</li>
          <li class="stock__percentage_change stock--positive">+5%</li>
+         <div class="stock_info hidden">
+           <p>Price: $30.00</p>
+           <p>Open: $29.70</p>
+           <p>Prev. close: $29.90</p>
+           <p>Change %: <span class="stock--postive">+5.00%</span></p>
+           <p>Change: <span class="stock--postive">+50.00</span></p>
+         </div>
        </ul>
+
+
 
        <ul class="stock">
          <li class="stock__name">NASDAQ</li>
          <li class="stock__price">$30.00</li>
          <li class="stock__change stock--positive">+0.18</li>
          <li class="stock__percentage_change stock--positive">+5%</li>
+         <div class="stock_info hidden">
+           <p>Price: $30.00</p>
+           <p>Open: $29.70</p>
+           <p>Prev. close: $29.90</p>
+           <p>Change %: <span class="stock--postive">+5.00%</span></p>
+           <p>Change: <span class="stock--postive">+50.00</span></p>
+         </div>
        </ul>
 
        <ul class="stock">
@@ -42,10 +58,17 @@
          <li class="stock__price">$30.00</li>
          <li class="stock__change stock--negative">-0.18</li>
          <li class="stock__percentage_change stock--negative">-5%</li>
+         <div class="stock_info hidden">
+           <p>Price: $30.00</p>
+           <p>Open: $29.70</p>
+           <p>Prev. close: $29.90</p>
+           <p>Change %: <span class="stock--negative">-5.00%</span></p>
+           <p>Change: <span class="stock--negative">-50.00</span></p>
+         </div>
        </ul>
      </article>
    </div>
-
+<script src="./js/index.js" charset="utf-8"></script>
  </body>
 
  </html>

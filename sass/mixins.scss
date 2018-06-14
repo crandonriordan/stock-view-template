@@ -1,3 +1,14 @@
 @mixin equalHorizontalSpacing($numberOfElements) {
   width: ((100% / $numberOfElements) - 1%);
 }
+
+@mixin clearFix() {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
