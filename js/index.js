@@ -44,10 +44,10 @@ function createStockList(stockName, stockData, currentDate, previousDate) {
   let currData = stockData[currentDate];
   let prevData = stockData[previousDate];
   let price = currData[OPEN_ID];
-  let change = currData[OPEN_ID] - prevData[CLOSE_ID];
+  let change = parseFloat(currData[OPEN_ID] - prevData[CLOSE_ID]).toFixed(2);
   // % Decrease = Decrease ÷ Original Number × 100
-  let changePercentage = (currData[OPEN_ID]
-    - prevData[CLOSE_ID]) / prevData[CLOSE_ID] * 100;
+  let changePercentage = parseFloat((currData[OPEN_ID]
+    - prevData[CLOSE_ID]) / prevData[CLOSE_ID] * 100).toFixed(2);
   let previousClose = prevData[CLOSE_ID];
 
   let markup = `
@@ -65,6 +65,7 @@ function createStockList(stockName, stockData, currentDate, previousDate) {
   let stockList = document.createElement("ul");
   stockList.className = "stock";
   stockList.innerHTML = markup;
+  stockList.onclick = triggerDropDownInformation;
   let article = document.getElementById("stock-container");
   article.appendChild(stockList);
 
@@ -75,19 +76,9 @@ function createStockList(stockName, stockData, currentDate, previousDate) {
 
 
 
-// let el = document.querySelectorAll(".stock");
-//
-// // anonymous functions for event listeners
-//
-// let triggerDropDownInformation = function(event) {
-//   let stockInfoElement = this.childNodes[9];
-//   this.childNodes[9].classList.toggle("hidden");
-//   this.childNodes[9].classList.toggle("displayed");
-// }
-//
-//
-// // don't iterate through the first stock as it's the header
-//
-// for(let i = 1; i < el.length; i++) {
-//   el[i].addEventListener("click", triggerDropDownInformation)
-// }
+// anonymous functions for event listeners
+let triggerDropDownInformation = function(event) {
+  let stockInfoElement = this.childNodes[9];
+  this.childNodes[9].classList.toggle("hidden");
+  this.childNodes[9].classList.toggle("displayed");
+}
