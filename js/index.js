@@ -14,3 +14,7 @@ let triggerDropDownInformation = function(event) {
 for(let i = 1; i < el.length; i++) {
   el[i].addEventListener("click", triggerDropDownInformation)
 }
+
+// https://iextrading.com/api-exhibit-a/
+const BASEURL = "https://api.iextrading.com/1.0";
+const APIKEY = config.APIKEY;
