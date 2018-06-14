@@ -22,6 +22,7 @@ li {
   position: relative;
   background: $white;
   margin: 0 auto;
+  padding-bottom: 10px;
   top: 25%;
   width: 50%;
   box-shadow: 1px 10px 20px rgba(0,0,0,0.19);
@@ -50,7 +51,7 @@ article {
 }
 
 .stock {
-  margin-bottom: 5%;
+  margin-bottom: 3%;
 }
 
 .stock__heading {
@@ -61,13 +62,16 @@ article {
 }
 
 .stock_info {
-  margin: 2% 0;
-  text-align: center;
-  p {
+  display: flex;
+  margin-top: 5px;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  div {
+    display: block;
     padding-left: 20px;
     margin-bottom: 5px;
-    display: inline-block;
-    @include equalHorizontalSpacing(2);
+    width: 50%;
   }
 }
 
@@ -98,5 +102,5 @@ article {
 }
 
 .displayed {
-  display: block;
+  display: flex;
 }
