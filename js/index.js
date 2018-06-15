@@ -45,21 +45,27 @@ function createStockList(stockName, stockData, currentDate, previousDate) {
   let prevData = stockData[previousDate];
   let price = currData[OPEN_ID];
   let change = parseFloat(currData[OPEN_ID] - prevData[CLOSE_ID]).toFixed(2);
+
   // % Decrease = Decrease ÷ Original Number × 100
   let changePercentage = parseFloat((currData[OPEN_ID]
     - prevData[CLOSE_ID]) / prevData[CLOSE_ID] * 100).toFixed(2);
-  let previousClose = prevData[CLOSE_ID];
+  let previousClose = parseFloat(prevData[CLOSE_ID]).toFixed(2);
+
+  // this var will be used to set class name of stock percentage for styling purposes
+  let percentageClassName = (changePercentage < 0) ? 'stock--negative' : 'stock--positive';
+  let changeClassName = (change < 0) ? 'stock--negative' : 'stock--positive';
+
 
   let markup = `
       <li class="stock__name">${stockName}</li>
       <li class="stock__price">${price}</li>
-      <li class="stock__change stock--positive">${change}</li>
-      <li class="stock__percentage_change stock--positive">${changePercentage}</li>
+      <li class="stock__change ${changeClassName}">${change}</li>
+      <li class="stock__percentage_change ${percentageClassName}">${changePercentage}</li>
       <div class="stock_info hidden">
         <div>Open: <span>${price}</span></div>
         <div>Prev. close: <span>${previousClose}</span></div>
-        <div>Change %: <span>${changePercentage}</span></div>
-        <div>Change: <span>${change}</span></div>
+        <div>Change %: <span class="${percentageClassName}">${changePercentage}</span></div>
+        <div>Change: <span class="${changeClassName}">${change}</span></div>
       </div>
   `;
   let stockList = document.createElement("ul");

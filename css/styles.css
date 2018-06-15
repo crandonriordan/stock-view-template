@@ -48,7 +48,7 @@ html {
 
 body {
   height: 100%;
-  background: linear-gradient(#EAD5A6 50%, #EFEFEF 50%); }
+  background: linear-gradient(#EAD5A6 50%, #EFEFEF 80%); }
 
 li:hover {
   cursor: default; }
@@ -58,8 +58,9 @@ li:hover {
   background: #EFEFEF;
   margin: 0 auto;
   padding-bottom: 10px;
-  top: 25%;
+  top: 35%;
   width: 50%;
+  min-height: 20%;
   box-shadow: 1px 10px 20px rgba(0, 0, 0, 0.19); }
   #container:after {
     visibility: hidden;
@@ -104,7 +105,7 @@ article li {
   .stock_info div {
     display: block;
     padding-left: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     width: 50%; }
 
 .stock--positive {
