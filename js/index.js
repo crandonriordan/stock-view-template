@@ -1,10 +1,12 @@
-// https://iextrading.com/api-exhibit-a/
-const BASEURL = "https://api.iextrading.com/1.0";
 const APIKEY = config.APIKEY;
 const EXAMPLEURL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=${APIKEY}`;
 const TIMESERIES = "Time Series (Daily)";
 const OPEN_ID = "1. open"; // the key for the json data
 const CLOSE_ID = "4. close"; // the key for the json data
+
+// decided against using a class declaration
+// as I only need one object for this site specifically
+
 
 
 
@@ -43,7 +45,7 @@ function formatDate(date = new Date()) {
 function createStockList(stockName, stockData, currentDate, previousDate) {
   let currData = stockData[currentDate];
   let prevData = stockData[previousDate];
-  let price = currData[OPEN_ID];
+  let price = parseFloat(currData[OPEN_ID]).toFixed(2);
   let change = parseFloat(currData[OPEN_ID] - prevData[CLOSE_ID]).toFixed(2);
 
   // % Decrease = Decrease ÷ Original Number × 100
