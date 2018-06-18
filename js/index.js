@@ -1,7 +1,6 @@
 
-(function() {
+(function () {
   'use strict';
-
 
   const APIKEY = config.APIKEY;
   const EXAMPLEURL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=${APIKEY}`;
